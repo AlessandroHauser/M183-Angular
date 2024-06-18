@@ -1,22 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Todo} from "../Todo";
-import {
-    MatCell,
-    MatCellDef,
-    MatColumnDef,
-    MatHeaderCell,
-    MatHeaderCellDef,
-    MatHeaderRow,
-    MatHeaderRowDef,
-    MatRow,
-    MatRowDef,
-    MatTable
-} from "@angular/material/table";
-import {DatePipe, NgForOf} from "@angular/common";
 import {Status} from "../Status";
-import {MatButton} from "@angular/material/button";
 import {Observable} from "rxjs";
-import {ClientService} from "../client.service";
+import {ClientService} from "../../services/client.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({

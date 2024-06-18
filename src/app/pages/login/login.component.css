@@ -1,0 +1,25 @@
+h1 {
+    background-color: #3F51B5;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+mat-card {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+button {
+    background-color: #3F51B5;
+}
+* {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
