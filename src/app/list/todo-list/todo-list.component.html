@@ -13,6 +13,7 @@
                 <button mat-button (click)="updateTodo(todo, textAreaElement)">Save</button>
             }
             <p>{{ todo.status  == Status.IN_PROGRESS ? 'In progress' : 'Done'}}</p>
+            <p>{{ todo.date | date: 'dd.MM.yyyy, HH:mm'}}</p>
             @if (todo.status !== Status.DONE) {
                 <button mat-button (click)="updateStatus(todo)" [disabled]="todo.status == Status.DONE">
                     Mark as done

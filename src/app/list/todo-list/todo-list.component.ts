@@ -12,7 +12,7 @@ import {
     MatRowDef,
     MatTable
 } from "@angular/material/table";
-import {NgForOf} from "@angular/common";
+import {DatePipe, NgForOf} from "@angular/common";
 import {Status} from "../Status";
 import {MatButton} from "@angular/material/button";
 import {Observable} from "rxjs";
@@ -34,7 +34,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
         MatHeaderCellDef,
         MatCellDef,
         MatHeaderRowDef,
-        MatRowDef
+        MatRowDef,
+        DatePipe
     ],
     templateUrl: './todo-list.component.html',
     styleUrl: './todo-list.component.css'
@@ -77,7 +78,11 @@ export class TodoListComponent implements OnInit {
     }
 
     createTodo(task: string) {
-        const todo = new Todo(0, task, Status.IN_PROGRESS, new Date(Date.now()))
+        const todo = new Todo(0,
+            task,
+            Status.IN_PROGRESS,
+            new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 7))
+        )
         this.clientService.createTodo(todo).subscribe(todo => {
             this.todos.push(todo);
             this.snackBar.open('Todo created', 'Close');
